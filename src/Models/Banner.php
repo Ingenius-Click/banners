@@ -93,15 +93,25 @@ class Banner extends Model
     {
         $now = now();
 
-        return $query->where('status', 'active')
-            ->where(function ($q) use ($now) {
-                $q->whereNull('starts_at')
-                    ->orWhere('starts_at', '<=', $now);
-            })
-            ->where(function ($q) use ($now) {
-                $q->whereNull('ends_at')
-                    ->orWhere('ends_at', '>=', $now);
-            });
+        return 
+            $query
+                ->where('status', 'active')
+                ->orWhere(function ($q) use ($now) {
+                    $q
+                        ->where('status', 'scheduled')
+                        ->where(function($query) use ($now){
+                            $query
+                                ->whereNotNull('starts_at')
+                                ->where('starts_at', '<=', $now);
+                        })
+                        ->where(function($query) use ($now){
+                            $query
+                                ->whereNotNull('ends_at')
+                                ->where('ends_at', '>=', $now);
+                        });
+                    ;
+                })
+                ;
     }
 
     /**

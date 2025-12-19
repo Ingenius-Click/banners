@@ -18,6 +18,7 @@ use Ingenius\Banners\Http\Requests\UpdateBannerRequest;
 use Ingenius\Banners\Models\Banner;
 use Ingenius\Banners\Services\BannersDispatcher;
 use Ingenius\Banners\Transformers\EditViewBannerResource;
+use Ingenius\Banners\Transformers\PublicViewBannerResource;
 use Ingenius\Core\Helpers\AuthHelper;
 use Ingenius\Core\Http\Controllers\Controller;
 
@@ -117,7 +118,7 @@ class BannersController extends Controller {
 
         return Response::api(
             __('Active banners fetched successfully'),
-            $banners
+            PublicViewBannerResource::collection($banners)
         );
     }
 

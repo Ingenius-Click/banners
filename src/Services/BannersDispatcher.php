@@ -11,8 +11,9 @@ class BannersDispatcher
     public function getActiveBannersByPosition(string $position): Collection
     {
         $banners = Banner::query()
+                    ->select('banners.*')
                     ->join('banner_placements', 'banners.id', '=', 'banner_placements.banner_id')
-                    ->where('banner_placements.position', $position)
+                    ->where('banner_placements.placement_key', $position)
                     ->currentlyActive()
                     ->byPriority()
                     ->get();

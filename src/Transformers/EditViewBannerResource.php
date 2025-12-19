@@ -26,7 +26,7 @@ class EditViewBannerResource extends JsonResource
         }
 
         if($this->targets()->exists()) {
-            $data['targets'] = $this->targets->pluck('target_key')->toArray();
+            $data['targets'] = $this->targets->pluck('target_type')->toArray();
         } else {
             $data['targets'] = [];
         }

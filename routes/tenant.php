@@ -45,3 +45,8 @@ Route::middleware(['api', 'tenant.user'])
                 ;
         });
     });
+
+Route::middleware(['api'])
+    ->prefix('api')->group(function() {
+        Route::get('/active-banners/{position}', [\Ingenius\Banners\Http\Controllers\BannersController::class, 'getActiveBannersByPosition']);
+    });
