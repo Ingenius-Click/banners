@@ -7,15 +7,16 @@ return [
 
     // Desktop Image
     'Desktop Image' => 'Desktop Image',
-    'Image for desktop devices (recommended: 1920x600px)' => 'Image for desktop devices (recommended: 1920x600px)',
+    'desktop_image_help' => 'Max size: 4MB | Recommended ratio: 4:3 (e.g., 800x600px, 1600x1200px)',
+    'desktop_image_help_update' => 'Optional: Upload only if you want to change the desktop image',
 
     // Tablet Image
     'Tablet Image' => 'Tablet Image',
-    'Optional image for tablet devices (recommended: 1024x400px). Falls back to desktop if not provided.' => 'Optional image for tablet devices (recommended: 1024x400px). Falls back to desktop if not provided.',
+    'tablet_image_help' => 'Max size: 4MB | Recommended ratio: 4:3 (e.g., 800x600px, 1600x1200px). Falls back to desktop if not provided.',
 
     // Mobile Image
     'Mobile Image' => 'Mobile Image',
-    'Optional image for mobile devices (recommended: 768x300px). Falls back to desktop if not provided.' => 'Optional image for mobile devices (recommended: 768x300px). Falls back to desktop if not provided.',
+    'mobile_image_help' => 'Max size: 4MB | Recommended ratio: 1:2 (e.g., 400x800px, 500x1000px). Falls back to desktop if not provided.',
 
     // Alt Text
     'Alt Text' => 'Alt Text',

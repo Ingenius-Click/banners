@@ -133,9 +133,9 @@ class ImageBanner extends AbstractContentType
     public static function rules(): array
     {
         return [
-            'desktop_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
-            'tablet_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
-            'mobile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'desktop_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096|dimensions:ratio=4/3',
+            'tablet_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096|dimensions:ratio=4/3',
+            'mobile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096|dimensions:ratio=1/2',
             'alt_text' => 'nullable|string|max:255',
             'link_url' => 'nullable|url|max:500',
             'link_target' => 'nullable|in:_self,_blank',
@@ -223,7 +223,7 @@ class ImageBanner extends AbstractContentType
                     'label' => __('banners::messages.Desktop Image'),
                     'required' => true,
                     'accept' => 'image/*',
-                    'help' => __('banners::messages.Image for desktop devices (recommended: 1920x600px)'),
+                    'help' => __('banners::messages.desktop_image_help'),
                 ],
                 [
                     'name' => 'tablet_image',
@@ -231,7 +231,7 @@ class ImageBanner extends AbstractContentType
                     'label' => __('banners::messages.Tablet Image'),
                     'required' => false,
                     'accept' => 'image/*',
-                    'help' => __('banners::messages.Optional image for tablet devices (recommended: 1024x400px). Falls back to desktop if not provided.'),
+                    'help' => __('banners::messages.tablet_image_help'),
                 ],
                 [
                     'name' => 'mobile_image',
@@ -239,7 +239,7 @@ class ImageBanner extends AbstractContentType
                     'label' => __('banners::messages.Mobile Image'),
                     'required' => false,
                     'accept' => 'image/*',
-                    'help' => __('banners::messages.Optional image for mobile devices (recommended: 768x300px). Falls back to desktop if not provided.'),
+                    'help' => __('banners::messages.mobile_image_help'),
                 ],
                 [
                     'name' => 'alt_text',
@@ -285,7 +285,7 @@ class ImageBanner extends AbstractContentType
         foreach ($schema['fields'] as &$field) {
             if ($field['name'] === 'desktop_image') {
                 $field['required'] = false;
-                $field['help'] = __('banners::messages.Optional: Upload only if you want to change the desktop image');
+                $field['help'] = __('banners::messages.desktop_image_help_update');
                 break;
             }
         }

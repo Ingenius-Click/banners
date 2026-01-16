@@ -7,15 +7,16 @@ return [
 
     // Desktop Image
     'Desktop Image' => 'Imagen de Escritorio',
-    'Image for desktop devices (recommended: 1920x600px)' => 'Imagen para dispositivos de escritorio (recomendado: 1920x600px)',
+    'desktop_image_help' => 'Tamaño máximo: 4MB | Ratio recomendado: 4:3 (ej., 800x600px, 1600x1200px)',
+    'desktop_image_help_update' => 'Opcional: Suba solo si desea cambiar la imagen de escritorio',
 
     // Tablet Image
     'Tablet Image' => 'Imagen de Tableta',
-    'Optional image for tablet devices (recommended: 1024x400px). Falls back to desktop if not provided.' => 'Imagen opcional para tabletas (recomendado: 1024x400px). Se usa la de escritorio si no se proporciona.',
+    'tablet_image_help' => 'Tamaño máximo: 4MB | Ratio recomendado: 4:3 (ej., 800x600px, 1600x1200px). Se usa la de escritorio si no se proporciona.',
 
     // Mobile Image
     'Mobile Image' => 'Imagen de Móvil',
-    'Optional image for mobile devices (recommended: 768x300px). Falls back to desktop if not provided.' => 'Imagen opcional para dispositivos móviles (recomendado: 768x300px). Se usa la de escritorio si no se proporciona.',
+    'mobile_image_help' => 'Tamaño máximo: 4MB | Ratio recomendado: 1:2 (ej., 400x800px, 500x1000px). Se usa la de escritorio si no se proporciona.',
 
     // Alt Text
     'Alt Text' => 'Texto Alternativo',
