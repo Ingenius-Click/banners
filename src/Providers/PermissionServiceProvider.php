@@ -28,8 +28,8 @@ class PermissionServiceProvider extends ServiceProvider
             'View banners',
             $this->packageName,
             'tenant',
-            'View banners',
-            'Banners'
+            __('banners::permissions.display_names.view_banners'),
+            __('banners::permissions.groups.banners')
         );
 
         $permissionsManager->register(
@@ -37,8 +37,8 @@ class PermissionServiceProvider extends ServiceProvider
             'Create banners',
             $this->packageName,
             'tenant',
-            'Create banners',
-            'Banners'
+            __('banners::permissions.display_names.create_banners'),
+            __('banners::permissions.groups.banners')
         );
 
         $permissionsManager->register(
@@ -46,8 +46,8 @@ class PermissionServiceProvider extends ServiceProvider
             'Edit banners',
             $this->packageName,
             'tenant',
-            'Edit banners',
-            'Banners'
+            __('banners::permissions.display_names.edit_banners'),
+            __('banners::permissions.groups.banners')
         );
 
         $permissionsManager->register(
@@ -55,8 +55,8 @@ class PermissionServiceProvider extends ServiceProvider
             'Delete banners',
             $this->packageName,
             'tenant',
-            'Delete banners',
-            'Banners'
+            __('banners::permissions.display_names.delete_banners'),
+            __('banners::permissions.groups.banners')
         );
     }
 }

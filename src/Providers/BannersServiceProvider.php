@@ -24,6 +24,9 @@ class BannersServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../../config/banners.php', 'banners');
 
+        // Load translations early so they're available for permission registration
+        $this->loadTranslationsFrom(__DIR__.'/../../lang', 'banners');
+
         // Register the route service provider
         $this->app->register(RouteServiceProvider::class);
 
@@ -58,9 +61,6 @@ class BannersServiceProvider extends ServiceProvider
             $this->registerTenantMigrations($tenantMigrationsPath, 'banners');
         }
         
-        // Load translations
-        $this->loadTranslationsFrom(__DIR__.'/../../lang', 'banners');
-
         // Load views
         $this->loadViewsFrom(__DIR__.'/../../resources/views', 'banners');
 
