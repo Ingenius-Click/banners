@@ -133,9 +133,9 @@ class ImageBanner extends AbstractContentType
     public static function rules(): array
     {
         return [
-            'desktop_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096|dimensions:ratio=4/3',
-            'tablet_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096|dimensions:ratio=4/3',
-            'mobile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096|dimensions:ratio=1/2',
+            'desktop_image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'tablet_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'mobile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
             'alt_text' => 'nullable|string|max:255',
             'link_url' => 'nullable|url|max:500',
             'link_target' => 'nullable|in:_self,_blank',
